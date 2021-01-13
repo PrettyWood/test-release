@@ -12,7 +12,7 @@ categories:
   - title: ":package: Build System & CI/CD"
     labels: [build, ci, testing]
   - title: ":boom: Breaking Changes"
-    labels: [breaking]
+    labels: [breaking, breaking-change]
   - title: ":pencil: Documentation"
     labels: [documentation]
   - title: ":arrow_up: Dependencies updates"
