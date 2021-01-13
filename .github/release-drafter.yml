@@ -1,38 +1,36 @@
-# Release drafter configuration https://github.com/release-drafter/release-drafter#configuration
-# Emojis were chosen to match the https://gitmoji.carloscuesta.me/
-
-name-template: "v$RESOLVED_VERSION"
-tag-template: "v$RESOLVED_VERSION"
-
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  # What's Changed
+  $CHANGES
 categories:
-  - title: ":rocket: Features"
-    labels: [enhancement, feature]
-  - title: ":wrench: Fixes & Refactoring"
-    labels: [bug, refactoring, bugfix, fix]
-  - title: ":package: Build System & CI/CD"
-    labels: [build, ci, testing]
-  - title: ":boom: Breaking Changes"
-    labels: [breaking, breaking-change]
-  - title: ":pencil: Documentation"
-    labels: [documentation]
-  - title: ":arrow_up: Dependencies updates"
-    labels: [dependencies]
+  - title: 'Breaking'
+    label: 'type: breaking'
+  - title: 'New'
+    label: 'type: feature'
+  - title: 'Bug Fixes'
+    label: 'type: bug'
+  - title: 'Maintenance'
+    label: 'type: maintenance'
+  - title: 'Documentation'
+    label: 'type: docs'
+  - title: 'Dependency Updates'
+    label: 'type: dependencies'
 
 version-resolver:
   major:
     labels:
-      - 'breaking'
-      - 'breaking-change'
+      - 'type: breaking'
   minor:
     labels:
-      - 'enhancement'
-      - 'feature'
+      - 'type: feature'
   patch:
     labels:
-      - 'fix'
-      - 'bug'
-  default: minor
+      - 'type: bug'
+      - 'type: maintenance'
+      - 'type: docs'
+      - 'type: dependencies'
+      - 'type: security'
 
-template: |
-  ## What’s Changed
-  $CHANGES
+exclude-labels:
+  - 'skip-changelog'
