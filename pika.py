@@ -1,3 +1,3 @@
-def pika() -> str:
-    return 'Chu!'
+def pika() -> int:
+    return 3
 
