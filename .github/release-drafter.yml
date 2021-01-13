@@ -4,6 +4,10 @@
 name-template: "v$RESOLVED_VERSION"
 tag-template: "v$RESOLVED_VERSION"
 
+references:
+  - main
+  - v.+
+
 categories:
   - title: ":rocket: Features"
     labels: [enhancement, feature]
@@ -32,6 +36,9 @@ version-resolver:
       - 'fix'
       - 'bug'
   default: minor
+
+exclude-labels:
+  - 'tech'
 
 template: |
   ## What’s Changed
